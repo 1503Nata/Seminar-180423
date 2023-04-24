@@ -2,23 +2,13 @@
 #Выдать без повторений в порядке возрастания все те числа, которые встречаются в обоих наборах.
 #Пользователь вводит 2 числа. n — кол-во элементов первого множества. 
 #m — кол-во элементов второго множества. Затем пользователь вводит сами элементы множеств.
+
 n = int(input('Введите количество элементов первого набора чисел : '))
-my_set = set()
-print('Множество:')
-for i in range(n):
-    my_set.add(input())
-print(my_set)
-'''
-
-set_1 = set()
-for i in range(n):
-    set_1.add(input())
-print('Множество:', set_1)
-
 m = int(input('Введите количество элементов второго набора чисел : '))
+set_1= set(map(int, input().split()))
+set_2 = set(map(int, input().split()))
+set_res = sorted(set_1 & set_2)
+list_res = list(set_res)
 
 
-#set_res = set_1.intersection(set_2)
-
-#print(set_res)
-'''
+print(*list_res)
